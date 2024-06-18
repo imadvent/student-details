@@ -2,6 +2,18 @@ spring:
   application:
     name: student-details
 
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      token: 0000-0000-0000-0000
+      scheme: http
+      kv:
+        backend: kv
+        default-context: mysql-config
+  config:
+    import: optional:vault://
+  
   jpa:
     generate-ddl: true
     show-sql: true
