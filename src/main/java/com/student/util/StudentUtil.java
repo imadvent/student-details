@@ -7,6 +7,8 @@ import com.student.entity.Student;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import static com.student.constants.StudentConstants.ID_PREFIX;
+
 public class StudentUtil {
 
     public static String dateToStringFormat(LocalDateTime localDateTime) {
@@ -28,5 +30,16 @@ public class StudentUtil {
         studentResponse.setStudentAddress(student.getStudentAddress());
         studentResponse.setStudentEnrollmentDate(student.getStudentEnrollmentDate());
         studentResponse.setUpdatedStudentEnrollmentDate(student.getUpdatedStudentEnrollmentDate());
+    }
+
+    public static String prefixAppend(StringBuilder id, int count) {
+        if (String.valueOf(count).length() == 1) {
+            id.append(ID_PREFIX.getDescription()).append(count);
+        } else if (String.valueOf(count).length() == 2) {
+            id.append(ID_PREFIX.getCode()).append(count);
+        } else {
+            id.append(count);
+        }
+        return id.toString();
     }
 }

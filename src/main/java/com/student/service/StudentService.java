@@ -9,11 +9,13 @@ public interface StudentService {
 
     StudentResponse insert(StudentRequest studentRequest);
 
-    StudentResponse view(int studentId);
+    StudentResponse view(String studentId);
 
     List<StudentResponse> viewAll();
 
-    StudentResponse change(int studentId, StudentRequest studentRequest);
+    StudentResponse change(String studentId, StudentRequest studentRequest);
 
-    void remove(int studentId);
+    void remove(String studentId);
+
+    String generateShoppingId();
 }

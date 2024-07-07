@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class StudentResponse {
 
-    private int studentId;
+    private String studentId;
     private String studentName;
     private String studentAddress;
     private String studentEnrollmentDate;

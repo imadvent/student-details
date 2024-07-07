@@ -54,7 +54,7 @@ public class StudentController {
             @ApiResponse(responseCode = "200", description = "successful operation")
     })
     @GetMapping(value = "/view/{studentId}", produces = "application/json")
-    public ResponseEntity<?> read(@PathVariable("studentId") int studentId) {
+    public ResponseEntity<?> read(@PathVariable("studentId") String studentId) {
 
         StudentResponse studentResponse = studentService.view(studentId);
 
@@ -68,7 +68,7 @@ public class StudentController {
             @ApiResponse(responseCode = "200", description = "successful operation")
     })
     @PutMapping(value = "/change/{studentId}", produces = "application/json")
-    public ResponseEntity<?> update(@PathVariable("studentId") int studentId,
+    public ResponseEntity<?> update(@PathVariable("studentId") String studentId,
                                     @RequestBody StudentRequest studentRequest) {
 
         StudentResponse studentResponse = studentService.change(studentId, studentRequest);
@@ -83,7 +83,7 @@ public class StudentController {
             @ApiResponse(responseCode = "200", description = "successful operation")
     })
     @DeleteMapping(value = "/remove/{studentId}")
-    public ResponseEntity<?> delete(@PathVariable("studentId") int studentId) {
+    public ResponseEntity<?> delete(@PathVariable("studentId") String studentId) {
 
         studentService.remove(studentId);
 
